@@ -1,25 +1,16 @@
 'use strict';
 
 {
-  function update() {
-    //querySelector の場合は、セレクター、またはセレクターにidを設定し、それを指定する
-    // document.querySelector('h1').textContent = 'Changed!';
-    // document.querySelector('#target').textContent = 'Changed!';
-
-    //getElementById を使用すれば、idを #なしで指定すれば良い。
-    document.getElementById('target').textContent = 'Changed!';
-
-
-    //querySelectorAllでセレクターの要素を全て選択でできる。
-    //その上で、指定したい配列を選ぶ
-    //全て要素を処理したい場合は、forEachを使う
-
-    // document.querySelectorAll('p')[1].textContent = 'こんにちワンコ🐶';
-    document.querySelectorAll('p').forEach((p, index) => {
-      p.textContent = `${index}番目のpです！`;
-    });
-
-  }
-
-  setTimeout(update, 1000);
+  //addEventListenerの第一引数はイベントの種類、第二引数は実行したい
+  // 処理を関数やアロー関数で渡す
+  document.querySelector('button').addEventListener('click', () => {
+    const targetNode = document.getElementById('target');
+    targetNode.textContent = 'Changed!';
+    //title属性の操作
+    targetNode.title = 'This is title!';
+    //style属性の操作
+    // スタイルに関しては、 JavaScript でこのように書いてしまうと、 CSS との役割分担があいまいになるので、見た目の指定は CSS に任せて、 JavaScript では class 属性の操作だけを書く方法が一般的
+    targetNode.style.color = 'red';
+    targetNode.style.backgroundColor = 'skyblue';
+  });
 }
