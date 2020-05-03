@@ -9,6 +9,7 @@
     //getElementById を使用すれば、idを #なしで指定すれば良い。
     document.getElementById('target').textContent = 'Changed!';
 
+
     //querySelectorAllでセレクターの要素を全て選択でできる。
     //その上で、指定したい配列を選ぶ
     //全て要素を処理したい場合は、forEachを使う
