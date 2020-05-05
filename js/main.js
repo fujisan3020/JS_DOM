@@ -1,19 +1,25 @@
 'use strict';
 
 {
-  document.querySelector('button').addEventListener('dblclick', () => {
-    console.log('Double Clicked!');
+  const text = document.querySelector('textarea');
+
+  text.addEventListener('focus', () => {
+    console.log('focus');
   });
 
-  document.addEventListener('mousemove', e => {
-    // console.log('moved!');
-
-    //clientX 、 clientY: ブラウザの表示領域の左上を基準とした XY 座標
-    console.log(e.clientX, e.clientY);
+  //blur: フォーカスが外れた時のイベント
+  text.addEventListener('blur', () => {
+    console.log('blur');
   });
 
-  //押したキーボードの表示
-  document.addEventListener('keydown', e => {
-    console.log(e.key);
+  //input : 内容が更新された時
+  text.addEventListener('input', () => {
+    // console.log('input');
+    console.log(text.value.length);
+  });
+
+  //change: 更新が確定した時
+  text.addEventListener('change', () => {
+    console.log('change');
   });
 }
