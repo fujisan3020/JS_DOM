@@ -3,14 +3,22 @@
 <head>
   <meta charset="utf-8">
   <title>JavaScript Basics</title>
+  <style media="screen">
+    li {
+      cursor: pointer;
+    }
+    li.done {
+      text-decoration: line-through;
+    }
+  </style>
 </head>
 <body>
 
-  <form>
-    <input type="text">
-    <!-- フォームを Enter キーで送信するには、 form タグの中に button タグが必要ですが、実は form タグの中に <input type="text"> が 1 つだけの場合は、 button を省略しても Enter キーだけで送信できます。 -->
-    <!-- <button>Post</button> -->
-  </form>
+  <ul> <!-- e.currentTarget -->
+    <li>Todo</li>
+    <li>Todo</li> <!-- e.target -->
+    <li>Todo</li>
+  </ul>
 
   <script src="js/main.js"></script>
 </body>
