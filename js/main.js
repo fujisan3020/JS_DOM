@@ -4,10 +4,16 @@
   //addEventListenerの第一引数はイベントの種類、第二引数は実行したい
   // 処理を関数やアロー関数で渡す
   document.querySelector('button').addEventListener('click', () => {
-    const item1 = document.querySelectorAll('li')[1];
+    const li = document.createElement('li');
 
-    // item1.remove();
-    // 親Node.removeChild(削除するNode)
-    document.querySelector('ul').removeChild(item1);
+    //inputで入力された値を取得
+    const text = document.querySelector('input');
+    //入力された値はvalue属性で取得できる
+    li.textContent = text.value;
+    document.querySelector('ul').appendChild(li);
+
+    //入力欄をクリアし、フォーカスさせる
+    text.value = '';
+    text.focus();
   });
 }
