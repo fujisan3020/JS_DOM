@@ -1,23 +1,19 @@
 'use strict';
 
 {
-  //addEventListenerの第一引数はイベントの種類、第二引数は実行したい
-  // 処理を関数やアロー関数で渡す
-  document.querySelector('button').addEventListener('click', () => {
-    const colors = document.querySelectorAll('input');
-    const selectedColors = [];
+  document.querySelector('button').addEventListener('dblclick', () => {
+    console.log('Double Clicked!');
+  });
 
-    colors.forEach(color => {
-      if (color.checked) {
-        //pushメソッド: 配列の末尾に値を入れるメソッド
-        selectedColors.push(color.value);
-      }
-    });
+  document.addEventListener('mousemove', e => {
+    // console.log('moved!');
 
-    const li = document.createElement('li');
-    // li.textContent = selectedColors.join(',');
-    li.textContent = selectedColors;
-    document.querySelector('ul').appendChild(li);
+    //clientX 、 clientY: ブラウザの表示領域の左上を基準とした XY 座標
+    console.log(e.clientX, e.clientY);
+  });
 
+  //押したキーボードの表示
+  document.addEventListener('keydown', e => {
+    console.log(e.key);
   });
 }
